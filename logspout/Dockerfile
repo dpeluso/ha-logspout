@@ -18,8 +18,14 @@ RUN curl -fSL -o logspout.tar.gz "https://github.com/gliderlabs/logspout/archive
 
 WORKDIR /go/src/github.com/gliderlabs/logspout
 RUN echo 'import ( _ "github.com/carbart/logspout-splunk" )' >> /go/src/github.com/gliderlabs/logspout/modules.go
-RUN go get -d -v ./...
-RUN go build -v -ldflags "-X main.Version=$(cat VERSION)" -o ./bin/logspout
+# RUN go get -d -v ./...
+# RUN go build -v -ldflags "-X main.Version=$(cat VERSION)" -o ./bin/logspout
+
+RUN \ 
+  go get -d -v \
+  && go install -v \
+  && go build -v -ldflags "-X main.Version=$(cat VERSION)" -o ./bin/logspout
+
 
 FROM alpine:latest
 COPY --from=build /go/src/github.com/gliderlabs/logspout/bin/logspout /go/bin/logspout
