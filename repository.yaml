@@ -1,4 +1,4 @@
 # https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
 name: HA Logspout
-url: 'https://github.com/SkyeLowry/ha-logspout'
-maintainer: Skye Lowry <patrickskyelowry@gmail.com>
+url: 'https://github.com/dpeluso/ha-logspout'
+maintainer: Daniel Peluso <Daniel.Peluso@gmail.com>
