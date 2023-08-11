@@ -1,10 +1,8 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Logspout addon
 version: "1.5.01"
-image: "ghcr.io/bertbaron/{arch}-addon-logspout"
 slug: logspout
 description: "Send HA logging to remote log management systems"
-url: "https://github.com/SkyeLowry/ha-logspout/tree/main/logspout"
 arch:
   - armhf
   - armv7
