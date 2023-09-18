@@ -18,6 +18,7 @@ local routes
 # }
 
 routes=$(jq -r '.routes | join(",")' /data/options.json)
+bashio::log.info "--- Looking for routes"
 bashio::log.info "Routes: $routes"
 
 export SYSLOG_HOSTNAME=$(bashio::config 'hostname' 'homeassistant')
